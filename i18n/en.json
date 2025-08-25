@@ -15,6 +15,22 @@
     "skillsTitle": "Skills",
     "skillsSubtitle": "Technologies and tools mastered to deliver exceptional digital experiences",
     "experienceTitle": "Experience",
-    "experienceSubtitle": "My professional journey building innovative technology solutions"
+    "experienceSubtitle": "My professional journey building innovative technology solutions",
+    "testimonialsTitle": "Testimonials",
+    "testimonialsSubtitle": "What my clients say about my work",
+    "contactTitle": "Contact",
+    "contactSubtitle": "Have a project in mind? I’d love to hear about it and help bring it to life",
+    "contactLetsTalk": "Let’s talk",
+    "contactIntro": "I’m always open to discussing new opportunities, interesting projects, or just chatting about technology and web development.",
+    "contactEmail": "Email",
+    "contactPhone": "Phone",
+    "contactLocation": "Location",
+    "contactName": "Name",
+    "contactNamePlaceholder": "Your name",
+    "contactSubject": "Subject",
+    "contactSubjectPlaceholder": "How can I help?",
+    "contactMessage": "Message",
+    "contactMessagePlaceholder": "Tell me about your project...",
+    "contactSend": "Send message"
   }
 }

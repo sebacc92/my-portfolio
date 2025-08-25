@@ -15,6 +15,22 @@
     "skillsTitle": "Habilidades",
     "skillsSubtitle": "Tecnologías y herramientas que domino para crear experiencias digitales excepcionales",
     "experienceTitle": "Experiencia",
-    "experienceSubtitle": "Mi trayectoria profesional desarrollando soluciones tecnológicas innovadoras"
+    "experienceSubtitle": "Mi trayectoria profesional desarrollando soluciones tecnológicas innovadoras",
+    "testimonialsTitle": "Testimonios",
+    "testimonialsSubtitle": "Lo que dicen mis clientes sobre mi trabajo",
+    "contactTitle": "Contacto",
+    "contactSubtitle": "¿Tienes un proyecto en mente? Me encantaría escuchar sobre él y ayudarte a hacerlo realidad",
+    "contactLetsTalk": "Hablemos",
+    "contactIntro": "Estoy siempre abierto a discutir nuevas oportunidades, proyectos interesantes o simplemente charlar sobre tecnología y desarrollo web.",
+    "contactEmail": "Email",
+    "contactPhone": "Teléfono",
+    "contactLocation": "Ubicación",
+    "contactName": "Nombre",
+    "contactNamePlaceholder": "Tu nombre",
+    "contactSubject": "Asunto",
+    "contactSubjectPlaceholder": "¿En qué puedo ayudarte?",
+    "contactMessage": "Mensaje",
+    "contactMessagePlaceholder": "Cuéntame sobre tu proyecto...",
+    "contactSend": "Enviar mensaje"
   }
 }
