@@ -30,7 +30,7 @@ export const TestimonialsSection = component$(() => {
   ];
 
   return (
-    <section id="testimonios" class="py-20 bg-muted/30">
+    <section id="testimonials" class="py-20 bg-muted/30">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12 space-y-2">
           <h2 class="text-3xl md:text-4xl font-bold">{_`testimonialsTitle`}</h2>

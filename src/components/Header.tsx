@@ -12,10 +12,11 @@ export default component$(() => {
   const currentLocale = getLocale()
 
   const navigation = [
-    { name: _`home`, href: "/" },
-    { name: _`projects`, href: "/projects" },
-    { name: _`about`, href: "/about" },
-    { name: _`contact`, href: "/contact" },
+    { name: _`Home`, href: "/" },
+    { name: _`Skills`, href: "#skills" },
+    { name: _`Experience`, href: "#experience" },
+    { name: _`Testimonials`, href: "#testimonials" },
+    { name: _`Contact`, href: "#contact" },
   ];
 
   return (

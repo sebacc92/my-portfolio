@@ -10,7 +10,7 @@ export const ContactSection = component$(() => {
   });
 
   return (
-    <section id="contacto" class="py-20 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
+    <section id="contact" class="py-20 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12 space-y-2">
           <h2 class="text-3xl md:text-4xl font-bold">{_`contactTitle`}</h2>

@@ -33,7 +33,7 @@ export const ExperienceSection = component$(() => {
   ];
 
   return (
-    <section id="experiencia" class="py-20">
+    <section id="experience" class="py-20">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12 space-y-2">
           <h2 class="text-3xl md:text-4xl font-bold">{_`experienceTitle`}</h2>
