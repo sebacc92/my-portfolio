@@ -1,5 +1,5 @@
 import { Button } from "~/components/ui/button/button"
-import { LuArrowDown, LuGithub, LuInstagram, LuLinkedin, LuMail, LuTwitter, LuYoutube } from "@qwikest/icons/lucide"
+import { LuArrowDown, LuDownload, LuGithub, LuInstagram, LuLinkedin, LuMail, LuTwitter, LuYoutube } from "@qwikest/icons/lucide"
 import { _ } from "compiled-i18n"
 import { NavLink } from "./NavLink"
 
@@ -34,7 +34,20 @@ export function HeroSection() {
                   <LuArrowDown class="ml-2 h-4 w-4" />
                 </Button>
               </NavLink>
-              <Button look="outline" size="lg" class="border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">
+              <Button
+                look="outline"
+                size="lg"
+                class="border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+                onClick$={() => {
+                  const link = document.createElement('a');
+                  link.href = '/SebastianCardosoCastilloResume.pdf';
+                  link.download = 'Sebastian_Cardoso_CV.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+              >
+                <LuDownload class="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
                 {_`Descargar CV`}
               </Button>
             </div>
