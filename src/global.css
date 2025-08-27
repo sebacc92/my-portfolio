@@ -95,3 +95,13 @@
   animation: wave 2s ease-in-out infinite;
   transform-origin: 70% 70%;
 }
+
+.theme-toggle__classic {
+  color: #000000;
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.theme-toggle__classic--dark {
+  color: #888888;
+} 
