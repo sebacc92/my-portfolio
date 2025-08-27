@@ -16,7 +16,7 @@ export function HeroSection() {
           <div class="text-center lg:text-left">
             <h1 class="font-montserrat font-black text-4xl sm:text-5xl lg:text-6xl text-gray-800 dark:text-white mb-6">
               {_`heroGreeting`}{" "}
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Seba</span> 👋
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Seba</span> <span class="inline-block animate-wave">👋</span>
             </h1>
             <h2 class="font-montserrat font-bold text-2xl sm:text-3xl lg:text-4xl text-gray-600 dark:text-gray-300 mb-6">
               {_`heroTitle`}
@@ -28,7 +28,7 @@ export function HeroSection() {
             {/* CTA Buttons */}
             <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
               <NavLink href="#experience">
-                <Button size="lg" class="bg-primary hover:bg-primary/90 text-white">
+                <Button size="lg" class="bg-primary hover:bg-primary/90 text-white w-full sm:w-auto min-w-[200px]">
                   {_`heroViewWork`}
                   <LuArrowDown class="ml-2 h-4 w-4" />
                 </Button>
@@ -36,7 +36,7 @@ export function HeroSection() {
               <Button
                 look="outline"
                 size="lg"
-                class="border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+                class="border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 w-full sm:w-auto min-w-[200px]"
                 onClick$={() => {
                   const link = document.createElement('a');
                   link.href = '/SebastianCardosoCastilloResume.pdf';
@@ -55,32 +55,32 @@ export function HeroSection() {
             <div class="flex gap-4 justify-center lg:justify-start">
               <a href="https://github.com/sebacc92" target="_blank">
                 <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
-                  <LuGithub class="h-5 w-5" />
+                  <LuGithub class="h-7 w-7" />
                 </Button>
               </a>
               <a href="https://x.com/sebacc92" target="_blank">
                 <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
-                  <LuTwitter class="h-5 w-5" />
+                  <LuTwitter class="h-7 w-7" />
                 </Button>
               </a>
               <a href="https://linkedin.com/in/sebastiancardoso92/" target="_blank">
                 <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
-                  <LuLinkedin class="h-5 w-5" />
+                  <LuLinkedin class="h-7 w-7" />
                 </Button>
               </a>
               <a href="https://instagram.com/sebacc92" target="_blank">
                 <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
-                  <LuInstagram class="h-5 w-5" />
+                  <LuInstagram class="h-7 w-7" />
                 </Button>
               </a>
               <a href="https://youtube.com/@sebacc92" target="_blank">
                 <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
-                  <LuYoutube class="h-5 w-5" />
+                  <LuYoutube class="h-7 w-7" />
                 </Button>
               </a>
               <a href="mailto:sebastiancardoso92@gmail.com" target="_blank">
                 <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
-                  <LuMail class="h-5 w-5" />
+                  <LuMail class="h-7 w-7" />
                 </Button>
               </a>
             </div>
