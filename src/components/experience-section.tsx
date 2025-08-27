@@ -4,32 +4,27 @@ import { _ } from "compiled-i18n";
 export const ExperienceSection = component$(() => {
   const experiences = [
     {
-      company: "TechCorp Solutions",
-      position: "Senior Frontend Developer",
-      location: "Madrid, España",
-      period: "2022 - Presente",
-      description:
-        "Lidero el desarrollo de aplicaciones web modernas usando React y Next.js. Implementé arquitecturas escalables que mejoraron el rendimiento en un 40%.",
-      technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+      company: "Freelance",
+      position: _`experienceFreelancePosition`,
+      location: _`experienceFreelanceLocation`,
+      period: "10/2024 - Presente",
+      description: _`experienceFreelanceDescription`,
+      technologies: ["WordPress", "Qwik", "Strapi", "SaaS", _`experienceFreelanceTech1`],
     },
     {
-      company: "StartupHub",
-      position: "Full Stack Developer",
-      location: "Barcelona, España",
-      period: "2020 - 2022",
-      description:
-        "Desarrollé aplicaciones completas desde el frontend hasta el backend. Colaboré en equipos ágiles y participé en la arquitectura de microservicios.",
-      technologies: ["Vue.js", "Node.js", "PostgreSQL", "Docker"],
-    },
-    {
-      company: "Digital Agency Pro",
-      position: "Frontend Developer",
-      location: "Valencia, España",
-      period: "2019 - 2020",
-      description:
-        "Creé sitios web responsivos y aplicaciones interactivas para clientes de diversos sectores. Optimicé el SEO y la accesibilidad web.",
-      technologies: ["JavaScript", "SASS", "WordPress", "PHP"],
-    },
+      company: "Arzion",
+      position: _`experienceArzionPosition`,
+      location: _`experienceArzionLocation`,
+      period: "11/2019 - 09/2024",
+      description: _`experienceArzionDescription`,
+      technologies: ["React", "JavaScript", "Cypress", _`experienceArzionTech1`, _`experienceArzionTech2`],
+      highlights: [
+        _`experienceArzionHighlight1`,
+        _`experienceArzionHighlight2`,
+        _`experienceArzionHighlight3`,
+        _`experienceArzionHighlight4`
+      ]
+    }
   ];
 
   return (
@@ -46,23 +41,39 @@ export const ExperienceSection = component$(() => {
               <div class="p-6">
                 <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
                   <div class="flex-1">
-                    <h3 class="text-xl font-bold mb-2">{exp.position}</h3>
-                    <h4 class="font-semibold text-primary text-lg mb-3">{exp.company}</h4>
-                    <div class="flex flex-wrap gap-4 mb-4 text-sm text-muted-foreground">
-                      <div class="flex items-center gap-2">
-                        <span class="i-lucide-calendar h-4 w-4"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
+                      <h3 class="text-xl font-bold text-primary">{_`${exp.position}`}</h3>
+                      <span class="text-sm font-medium text-muted-foreground bg-muted px-3 py-1 rounded-full">
                         {exp.period}
-                      </div>
-                      <div class="flex items-center gap-2">
-                        <span class="i-lucide-map-pin h-4 w-4"></span>
-                        {exp.location}
-                      </div>
+                      </span>
                     </div>
-                    <p class="text-muted-foreground mb-4">{exp.description}</p>
+                    <h4 class="font-semibold text-lg mb-2">{exp.company}</h4>
+                    <div class="flex items-center gap-2 mb-4 text-sm text-muted-foreground">
+                      <span class="i-lucide-map-pin h-4 w-4"></span>
+                      {_`${exp.location}`}
+                    </div>
+                    <p class="text-muted-foreground mb-4 leading-relaxed">{_`${exp.description}`}</p>
+                    
+                    {/* Highlights - Solo mostrar si existen */}
+                    {exp.highlights && (
+                      <div class="mb-4">
+                        <h5 class="font-medium text-sm mb-2 text-foreground">{_`experienceHighlights`}</h5>
+                        <ul class="space-y-1">
+                          {exp.highlights.map((highlight, idx) => (
+                            <li key={idx} class="flex items-start gap-2 text-sm text-muted-foreground">
+                              <span class="i-lucide-check-circle h-4 w-4 text-green-500 mt-0.5 flex-shrink-0"></span>
+                              {_`${highlight}`}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Technologies */}
                     <div class="flex flex-wrap gap-2">
                       {exp.technologies.map((tech) => (
-                        <span key={tech} class="inline-flex items-center rounded-full border px-3 py-1 text-sm bg-background">
-                          {tech}
+                        <span key={tech} class="inline-flex items-center rounded-full border px-3 py-1 text-sm bg-background hover:bg-muted transition-colors">
+                          {tech.startsWith('experience') ? _`${tech}` : tech}
                         </span>
                       ))}
                     </div>

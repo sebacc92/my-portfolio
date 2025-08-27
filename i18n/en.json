@@ -16,6 +16,20 @@
     "skillsSubtitle": "Technologies and tools mastered to deliver exceptional digital experiences",
     "experienceTitle": "Experience",
     "experienceSubtitle": "My professional journey building innovative technology solutions",
+    "experienceHighlights": "Key achievements:",
+    "experienceFreelancePosition": "Frontend Developer",
+    "experienceFreelanceLocation": "Remote",
+    "experienceFreelanceDescription": "Development of corporate, institutional websites and SaaS applications. I manage complete digital presence including web development, video editing and social media strategy.",
+    "experienceFreelanceTech1": "Digital Management",
+    "experienceArzionPosition": "Frontend Developer & QA",
+    "experienceArzionLocation": "Buenos Aires, La Plata",
+    "experienceArzionDescription": "Software Factory where I developed and maintained unit testing systems, led the frontend development of RestroSimple.com (complete application for gastronomic order management), implemented automated testing architecture with Cypress, migrated legacy application from vanilla JavaScript to React for iGlobal.co, and closely collaborated with design and backend teams using agile methodology.",
+    "experienceArzionTech1": "Unit Testing",
+    "experienceArzionTech2": "Agile Methodology",
+    "experienceArzionHighlight1": "Significant reduction of bugs in production",
+    "experienceArzionHighlight2": "Leadership in frontend development from scratch",
+    "experienceArzionHighlight3": "Successful migration of legacy applications",
+    "experienceArzionHighlight4": "Implementation of automated testing",
     "testimonialsTitle": "Testimonials",
     "testimonialsSubtitle": "What my clients say about my work",
     "contactTitle": "Contact",
@@ -31,6 +45,14 @@
     "contactSubjectPlaceholder": "How can I help?",
     "contactMessage": "Message",
     "contactMessagePlaceholder": "Tell me about your project...",
-    "contactSend": "Send message"
+    "contactSend": "Send message",
+
+    "heroGreeting": "Hello, I'm",
+    "heroTitle": "Frontend Developer",
+    "heroDescription": "I help companies and brands build and improve their online presence through clean code, modern interfaces and exceptional user experiences.",
+    "heroViewWork": "View my work",
+    "heroDownloadCV": "Download CV",
+    "heroImageAlt1": "Seba working on his laptop outdoors under the stars",
+    "heroImageAlt2": "Seba working on his laptop in the forest during the day"
   }
 }

@@ -15,22 +15,21 @@ export function HeroSection() {
           {/* Text Content */}
           <div class="text-center lg:text-left">
             <h1 class="font-montserrat font-black text-4xl sm:text-5xl lg:text-6xl text-gray-800 dark:text-white mb-6">
-              {_`Hola, soy`}{" "}
+              {_`heroGreeting`}{" "}
               <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Seba</span> 👋
             </h1>
             <h2 class="font-montserrat font-bold text-2xl sm:text-3xl lg:text-4xl text-gray-600 dark:text-gray-300 mb-6">
-              {_`Desarrollador Frontend`}
+              {_`heroTitle`}
             </h2>
             <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl">
-              {_`Ayudo a empresas y marcas a construir y mejorar su presencia online a través de código limpio, interfaces
-              modernas y experiencias de usuario excepcionales.`}
+              {_`heroDescription`}
             </p>
 
             {/* CTA Buttons */}
             <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
               <NavLink href="#experience">
                 <Button size="lg" class="bg-primary hover:bg-primary/90 text-white">
-                  {_`Ver mi trabajo`}
+                  {_`heroViewWork`}
                   <LuArrowDown class="ml-2 h-4 w-4" />
                 </Button>
               </NavLink>
@@ -48,7 +47,7 @@ export function HeroSection() {
                 }}
               >
                 <LuDownload class="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
-                {_`Descargar CV`}
+                {_`heroDownloadCV`}
               </Button>
             </div>
 
@@ -95,13 +94,13 @@ export function HeroSection() {
                   {/* Light mode image - man working outdoors at night */}
                   <img
                     src="/hero-light.webp"
-                    alt={_`Seba trabajando en su laptop al aire libre bajo las estrellas`}
+                    alt={_`heroImageAlt1`}
                     class="w-full h-full rounded-full object-cover dark:hidden"
                   />
                   {/* Dark mode image - man working in forest during day */}
                   <img
                     src="/hero-dark.webp"
-                    alt={_`Seba trabajando en su laptop en el bosque durante el día`}
+                    alt={_`heroImageAlt2`}
                     class="w-full h-full rounded-full object-cover hidden dark:block"
                   />
                 </div>

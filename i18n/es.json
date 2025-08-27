@@ -16,6 +16,20 @@
     "skillsSubtitle": "Tecnologías y herramientas que domino para crear experiencias digitales excepcionales",
     "experienceTitle": "Experiencia",
     "experienceSubtitle": "Mi trayectoria profesional desarrollando soluciones tecnológicas innovadoras",
+    "experienceHighlights": "Logros destacados:",
+    "experienceFreelancePosition": "Desarrollador Frontend",
+    "experienceFreelanceLocation": "Remoto",
+    "experienceFreelanceDescription": "Desarrollo de sitios web corporativos, institucionales y aplicaciones SaaS. Gestiono presencia digital completa incluyendo desarrollo web, edición de video y estrategia en redes sociales.",
+    "experienceFreelanceTech1": "Gestión Digital",
+    "experienceArzionPosition": "Desarrollador Frontend & QA",
+    "experienceArzionLocation": "Buenos Aires, La Plata",
+    "experienceArzionDescription": "Software Factory donde desarrollé y mantuve sistemas de testing unitario, lideré el desarrollo frontend de RestroSimple.com (aplicación completa para gestión de pedidos gastronómicos), implementé arquitectura de testing automatizado con Cypress, migré aplicación legacy de JavaScript vanilla a React para iGlobal.co, y colaboré estrechamente con equipos de diseño y backend en metodología ágil.",
+    "experienceArzionTech1": "Testing Unitario",
+    "experienceArzionTech2": "Metodología Ágil",
+    "experienceArzionHighlight1": "Reducción significativa de bugs en producción",
+    "experienceArzionHighlight2": "Liderazgo en desarrollo frontend desde cero",
+    "experienceArzionHighlight3": "Migración exitosa de aplicaciones legacy",
+    "experienceArzionHighlight4": "Implementación de testing automatizado",
     "testimonialsTitle": "Testimonios",
     "testimonialsSubtitle": "Lo que dicen mis clientes sobre mi trabajo",
     "contactTitle": "Contacto",
@@ -31,6 +45,14 @@
     "contactSubjectPlaceholder": "¿En qué puedo ayudarte?",
     "contactMessage": "Mensaje",
     "contactMessagePlaceholder": "Cuéntame sobre tu proyecto...",
-    "contactSend": "Enviar mensaje"
+    "contactSend": "Enviar mensaje",
+
+    "heroGreeting": "Hola, soy",
+    "heroTitle": "Desarrollador Frontend",
+    "heroDescription": "Ayudo a empresas y marcas a construir y mejorar su presencia online a través de código limpio, interfaces modernas y experiencias de usuario excepcionales.",
+    "heroViewWork": "Ver mi trabajo",
+    "heroDownloadCV": "Descargar CV",
+    "heroImageAlt1": "Seba trabajando en su laptop al aire libre bajo las estrellas",
+    "heroImageAlt2": "Seba trabajando en su laptop en el bosque durante el día"
   }
 }
