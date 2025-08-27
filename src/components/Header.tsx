@@ -15,7 +15,6 @@ export default component$(() => {
     { name: _`Home`, href: "/" },
     { name: _`Skills`, href: "#skills" },
     { name: _`Projects`, href: "#projects" },
-    { name: _`Testimonials`, href: "#testimonials" },
     { name: _`Contact`, href: "#contact" },
   ];
 
