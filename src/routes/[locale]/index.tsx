@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { HeroSection } from "~/components/hero-section";
 import { SkillsSection } from "~/components/skills-section";
-import { ExperienceSection } from "~/components/experience-section";
+import { ProjectsSection } from "~/components/projects-section";
 // import { TestimonialsSection } from "~/components/testimonials-section";
 import { ContactSection } from "~/components/contact-section";
 
@@ -10,7 +10,7 @@ export default component$(() => {
     <main class="min-h-screen">
       <HeroSection />
       <SkillsSection />
-      <ExperienceSection />
+      <ProjectsSection />
       {/* <TestimonialsSection /> */}
       <ContactSection />
     </main>

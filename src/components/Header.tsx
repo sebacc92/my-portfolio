@@ -14,7 +14,7 @@ export default component$(() => {
   const navigation = [
     { name: _`Home`, href: "/" },
     { name: _`Skills`, href: "#skills" },
-    { name: _`Experience`, href: "#experience" },
+    { name: _`Projects`, href: "#projects" },
     { name: _`Testimonials`, href: "#testimonials" },
     { name: _`Contact`, href: "#contact" },
   ];
