@@ -1,7 +1,8 @@
 import { Button } from "~/components/ui/button/button"
-import { LuArrowDown, LuDownload, LuGithub, LuInstagram, LuLinkedin, LuMail, LuTwitter, LuYoutube } from "@qwikest/icons/lucide"
+import { LuArrowDown, LuDownload, LuGithub, LuInstagram, LuLinkedin, LuTwitter, LuYoutube } from "@qwikest/icons/lucide"
 import { _ } from "compiled-i18n"
 import { NavLink } from "./NavLink"
+import Tiktok from "~/media/tiktok.svg?jsx";
 
 export function HeroSection() {
   return (
@@ -78,9 +79,9 @@ export function HeroSection() {
                   <LuYoutube class="h-7 w-7" />
                 </Button>
               </a>
-              <a href="mailto:sebastiancardoso92@gmail.com" target="_blank">
+              <a href="https://tiktok.com/@sebacc92" target="_blank">
                 <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
-                  <LuMail class="h-7 w-7" />
+                  <Tiktok class="h-7 w-7" />
                 </Button>
               </a>
             </div>
