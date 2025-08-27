@@ -27,6 +27,7 @@
     "projectsErconDescription": "Web portal for ERCON, construction company. Responsive site with service catalog and integrated contact forms.",
     "projectsItalianosEnMiramarDescription": "Cultural platform for the Italian community in Miramar. Developed with Qwik and Strapi, includes event management and cultural content.",
     "projectsCoachFabianDescription": "Website for Coach Fabián Avendaño, personal fitness trainer. Complete platform with training programs, testimonials and contact system. Developed with Qwik, TypeScript and Tailwind CSS.",
+    "projectsUrbanStyleMiramarDescription": "E-commerce store for Urban Style Miramar, urban clothing brand. Built with TiendaNube platform, featuring product catalog, shopping cart, and payment integration.",
     "testimonialsTitle": "Testimonials",
     "testimonialsSubtitle": "What my clients say about my work",
     "contactTitle": "Contact",

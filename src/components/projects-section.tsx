@@ -45,6 +45,14 @@ const freelanceProjects = [
     technologies: ["Qwik", "TypeScript", "Tailwind CSS", "Responsive Design"],
     url: "https://coach-fabian-avendano.netlify.app/",
     type: "freelance"
+  },
+  {
+    id: 6,
+    title: "Urban Style Miramar",
+    description: "projectsUrbanStyleMiramarDescription",
+    technologies: ["TiendaNube", "E-commerce", "Responsive Design", "Payment Integration"],
+    url: "https://urbanstylemiramar.mitiendanube.com/",
+    type: "freelance"
   }
 ];
 
