@@ -23,10 +23,10 @@ export const LocaleSelector = component$(() => {
 				onClick$={toggleDropdown}
 				aria-label="Select language"
 				aria-expanded={isOpen.value}
-				class="relative"
+				class="relative inline-flex items-center text-xl md:text-2xl"
 			>
-				<LuLanguages class="h-5 w-5" />
-				<LuChevronDown class={`h-3 w-3 ml-1 transition-transform duration-200 ${isOpen.value ? 'rotate-180' : ''}`} />
+				<LuLanguages class="h-[1em] w-[1em]" />
+				<LuChevronDown class={`h-[0.75em] w-[0.75em] ml-1 transition-transform duration-200 ${isOpen.value ? 'rotate-180' : ''}`} />
 			</Button>
 			
 			{isOpen.value && (
