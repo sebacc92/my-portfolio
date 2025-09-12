@@ -23,7 +23,7 @@ export const ThemeSwitch = component$(() => {
     });
 
     return (
-        <label class="theme-toggle" title="Toggle theme">
+        <label class="theme-toggle inline-flex items-center text-xl md:text-2xl" title="Toggle theme">
             <input 
                 type="checkbox" 
                 checked={theme.value === 'dark'}
