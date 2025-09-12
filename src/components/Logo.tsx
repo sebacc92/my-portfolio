@@ -5,7 +5,7 @@ export default component$(() => {
     <svg 
       xmlns="http://www.w3.org/2000/svg" 
       viewBox="0 0 200 200"
-      class="w-10 h-10"
+      class="w-14 h-14"
     >
       {/* Texto "SC" */}
       <text 
@@ -15,7 +15,7 @@ export default component$(() => {
         text-anchor="middle"
         font-family="Arial, sans-serif"
         font-weight="bold"
-        font-size="120"
+        font-size="140"
         fill="#0066cc"
       >
         SC

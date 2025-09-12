@@ -44,23 +44,23 @@
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --popover: 222.2 84% 4.9%;
+    --muted: 217.2 30% 14%;
+    --muted-foreground: 215 20.2% 72%;
+    --popover: 222.2 40% 7.5%;
     --popover-foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
+    --card: 222.2 40% 7.5%;
     --card-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
+    --border: 217.2 22% 22%;
+    --input: 217.2 22% 22%;
     --primary: 191.6 91.4% 36.5%;
     --primary-foreground: 0 0% 100%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 0 0% 0%;
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 217.2 25% 20%;
     --accent-foreground: 210 40% 98%;
     --alert: 0 84.2% 60.2%;
     --alert-foreground: 210 40% 98%;
-    --ring: 212.7 26.8% 83.9;
+    --ring: 212.7 26.8% 83.9%;
     --border-width: 0px;
     --border-radius: 0.25rem;
     --shadow-base: 0 1px 2px 0 rgba(0, 0, 0, 0.01);
@@ -78,22 +78,25 @@
   }
 }
 
-/* Custom animations */
 @keyframes wave {
-  0%, 100% {
-    transform: rotate(0deg);
+  0%, 100% { 
+    transform: rotate(0deg); 
   }
-  10%, 30%, 50%, 70%, 90% {
-    transform: rotate(20deg);
+  10%, 30%, 50%, 70% { 
+    transform: rotate(-10deg); 
   }
-  20%, 40%, 60%, 80% {
-    transform: rotate(-20deg);
+  20%, 40%, 60%, 80% { 
+    transform: rotate(10deg); 
+  }
+  90% { 
+    transform: rotate(-5deg); 
   }
 }
 
 .animate-wave {
-  animation: wave 2s ease-in-out infinite;
+  animation: wave 2.5s ease-in-out infinite;
   transform-origin: 70% 70%;
+  display: inline-block;
 }
 
 .theme-toggle__classic {
@@ -103,5 +106,5 @@
 }
 
 .theme-toggle__classic--dark {
-  color: #888888;
+  color: #c7c7c7;
 } 

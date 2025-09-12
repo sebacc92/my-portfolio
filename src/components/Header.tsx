@@ -6,6 +6,7 @@ import Logo from "~/components/Logo";
 import { LocaleSelector } from "./locale-selector";
 import { ThemeSwitch } from "~/components/ThemeSwitch";
 import { NavLink } from "./NavLink";
+import { Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
   const isMenuOpen = useSignal(false);
@@ -20,12 +21,12 @@ export default component$(() => {
 
   return (
     <header class="fixed top-0 left-0 right-0 z-50 h-16 bg-white dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 shadow-sm">
-      <nav class="container mx-auto px-4 py-4">
-        <div class="flex items-center justify-between">
+      <nav class="container mx-auto px-4 h-full">
+        <div class="flex items-center justify-between h-full">
           {/* Logo */}
-          <a href="/" class="flex items-center space-x-2">
+          <Link href="/" class="flex items-center space-x-2">
             <Logo />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div class="hidden md:flex items-center space-x-8">
