@@ -11,8 +11,6 @@ import VueLogo from "~/media/skills/vue.svg?jsx";
 import NuxtLogo from "~/media/skills/nuxt.svg?jsx";
 import WebpackLogo from "~/media/skills/webpack.svg?jsx";
 import SassLogo from "~/media/skills/sass.svg?jsx";
-import StylusLogo from "~/media/skills/stylus.svg?jsx";
-import VitejsLogo from "~/media/skills/vitejs.svg?jsx";
 import TailwindcssLogo from "~/media/skills/tailwindcss.svg?jsx";
 import NodejsLogo from "~/media/skills/nodejs.svg?jsx";
 import ExpressLogo from "~/media/skills/express.svg?jsx";
