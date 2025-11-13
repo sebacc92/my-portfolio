@@ -35,7 +35,7 @@ export default component$(() => {
                 key={item.name}
                 href={`/${currentLocale}${item.href}`}
                 class="transition-colors hover:text-blue-600 dark:hover:text-blue-400 text-gray-700 dark:text-gray-300"
-                activeClass="!text-blue-600 dark:!text-blue-400 !font-semibold"
+                activeClass="text-blue-600! dark:text-blue-400! font-semibold!"
               >
                 {item.name}
               </NavLink>
@@ -66,7 +66,7 @@ export default component$(() => {
                   key={item.name}
                   href={`/${currentLocale}${item.href}`}
                   class="px-4 py-3 rounded-lg transition-all duration-300 font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-                  activeClass="!bg-blue-600 !text-white !shadow-lg"
+                  activeClass="bg-blue-600! text-white! shadow-lg!"
                   onClick$={() => (isMenuOpen.value = false)}
                 >
                   {item.name}

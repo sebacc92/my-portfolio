@@ -58,7 +58,7 @@ const freelanceProjects = [
 
 export const ProjectsSection = component$(() => {
   return (
-    <section id="projects" class="py-20 bg-gradient-to-b from-background to-muted/20">
+    <section id="projects" class="py-20 bg-linear-to-b from-background to-muted/20">
       <div class="container mx-auto px-4 max-w-7xl">
         {/* Header centrado */}
         <div class="text-center mb-16">
@@ -78,7 +78,7 @@ export const ProjectsSection = component$(() => {
           <div class="flex justify-center">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl">
               {personalProjects.map((project) => (
-                <div key={project.id} class="group relative overflow-hidden rounded-2xl border bg-card text-card-foreground shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-card to-card/80 backdrop-blur-sm">
+                <div key={project.id} class="group relative overflow-hidden rounded-2xl border bg-card text-card-foreground shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-linear-to-br from-card to-card/80 backdrop-blur-xs">
                   <div class="p-8 text-center">
                     <h4 class="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
                       {project.title}
@@ -138,7 +138,7 @@ export const ProjectsSection = component$(() => {
           <div class="flex justify-center">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl">
               {freelanceProjects.map((project) => (
-                <div key={project.id} class="group relative overflow-hidden rounded-2xl border bg-card text-card-foreground shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-card to-card/80 backdrop-blur-sm">
+                <div key={project.id} class="group relative overflow-hidden rounded-2xl border bg-card text-card-foreground shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-linear-to-br from-card to-card/80 backdrop-blur-xs">
                   <div class="p-6 text-center">
                     <h4 class="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
                       {project.title}

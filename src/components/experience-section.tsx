@@ -61,7 +61,7 @@ export const ExperienceSection = component$(() => {
                         <ul class="space-y-1">
                           {exp.highlights.map((highlight, idx) => (
                             <li key={idx} class="flex items-start gap-2 text-sm text-muted-foreground">
-                              <span class="i-lucide-check-circle h-4 w-4 text-green-500 mt-0.5 flex-shrink-0"></span>
+                              <span class="i-lucide-check-circle h-4 w-4 text-green-500 mt-0.5 shrink-0"></span>
                               {_`${highlight}`}
                             </li>
                           ))}

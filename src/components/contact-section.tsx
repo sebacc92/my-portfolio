@@ -83,7 +83,7 @@ export const ContactSection = component$(() => {
   });
 
   return (
-    <section id="contact" class="py-20 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
+    <section id="contact" class="py-20 bg-linear-to-br from-primary/5 via-secondary/5 to-accent/5">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12 space-y-2">
           <h2 class="text-3xl md:text-4xl font-bold">{_`contactTitle`}</h2>
@@ -154,7 +154,7 @@ export const ContactSection = component$(() => {
                     <input 
                       id="name" 
                       name="name" 
-                      class="w-full rounded-md border bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" 
+                      class="w-full rounded-md border bg-background px-3 py-2 focus:outline-hidden focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" 
                       placeholder={_`contactNamePlaceholder`} 
                       value={formData.name} 
                       onInput$={(e) => (formData.name = (e.target as HTMLInputElement).value)} 
@@ -168,7 +168,7 @@ export const ContactSection = component$(() => {
                       id="email" 
                       name="email" 
                       type="email" 
-                      class="w-full rounded-md border bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" 
+                      class="w-full rounded-md border bg-background px-3 py-2 focus:outline-hidden focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" 
                       placeholder="tu@email.com" 
                       value={formData.email} 
                       onInput$={(e) => (formData.email = (e.target as HTMLInputElement).value)} 
@@ -183,7 +183,7 @@ export const ContactSection = component$(() => {
                   <input 
                     id="subject" 
                     name="subject" 
-                    class="w-full rounded-md border bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" 
+                    class="w-full rounded-md border bg-background px-3 py-2 focus:outline-hidden focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" 
                     placeholder={_`contactSubjectPlaceholder`} 
                     value={formData.subject} 
                     onInput$={(e) => (formData.subject = (e.target as HTMLInputElement).value)} 
@@ -198,7 +198,7 @@ export const ContactSection = component$(() => {
                       id="message" 
                       name="message" 
                       rows={5} 
-                      class="w-full rounded-md border bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors resize-none" 
+                      class="w-full rounded-md border bg-background px-3 py-2 focus:outline-hidden focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors resize-none" 
                       placeholder={_`contactMessagePlaceholder`} 
                       value={formData.message} 
                       onInput$={(e) => (formData.message = (e.target as HTMLTextAreaElement).value)} 

@@ -50,7 +50,7 @@ export default component$(() => {
   ];
 
   return (
-    <footer class="h-20 glass-effect border-t border-border flex-shrink-0">
+    <footer class="h-20 glass-effect border-t border-border shrink-0">
       <div class="container mx-auto px-4 py-4">
         {/* Social Links */}
         <div class="flex justify-center space-x-4 mb-2">

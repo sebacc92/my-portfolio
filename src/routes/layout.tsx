@@ -42,7 +42,7 @@ export default component$(() => {
   return (
     <div class="min-h-screen flex flex-col">
       <Header />
-      <div class="flex-shrink-0"></div>
+      <div class="shrink-0"></div>
       <main class="flex-1">
         <Slot />
       </main>

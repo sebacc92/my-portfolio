@@ -2,13 +2,13 @@ import { Button } from "~/components/ui/button/button"
 import { LuArrowDown, LuDownload, LuGithub, LuInstagram, LuLinkedin, LuTwitter, LuYoutube } from "@qwikest/icons/lucide"
 import { _ } from "compiled-i18n"
 import { NavLink } from "./NavLink"
-import Tiktok from "~/media/tiktok.svg?jsx";
+import { FaTiktok } from "@qwikest/icons/font-awesome";
 
 export function HeroSection() {
   return (
-    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-linear-to-br from-blue-50 via-indigo-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Gradient Background */}
-      <div class="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-accent opacity-10 dark:opacity-20"></div>
+      <div class="absolute inset-0 bg-linear-to-br from-primary via-secondary to-accent opacity-10 dark:opacity-20"></div>
 
       {/* Content */}
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
@@ -17,7 +17,7 @@ export function HeroSection() {
           <div class="text-center lg:text-left">
             <h1 class="font-montserrat font-black text-4xl sm:text-5xl lg:text-6xl text-gray-800 dark:text-white mb-6">
               {_`heroGreeting`}{" "}
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Seba</span> <span class="inline-block animate-wave">👋</span>
+              <span class="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">Seba</span> <span class="inline-block animate-wave">👋</span>
             </h1>
             <h2 class="font-montserrat font-bold text-2xl sm:text-3xl lg:text-4xl text-gray-600 dark:text-gray-300 mb-6">
               {_`heroTitle`}
@@ -59,11 +59,6 @@ export function HeroSection() {
                   <LuGithub class="h-7 w-7" />
                 </Button>
               </a>
-              <a href="https://x.com/sebacc92" target="_blank">
-                <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
-                  <LuTwitter class="h-7 w-7" />
-                </Button>
-              </a>
               <a href="https://linkedin.com/in/sebastiancardoso92/" target="_blank">
                 <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
                   <LuLinkedin class="h-7 w-7" />
@@ -74,14 +69,19 @@ export function HeroSection() {
                   <LuInstagram class="h-7 w-7" />
                 </Button>
               </a>
+              <a href="https://tiktok.com/@sebacc92" target="_blank">
+                <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
+                  <FaTiktok class="h-6 w-6" />
+                </Button>
+              </a>
+              <a href="https://x.com/sebacc92" target="_blank">
+                <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
+                  <LuTwitter class="h-7 w-7" />
+                </Button>
+              </a>
               <a href="https://youtube.com/@sebacc92" target="_blank">
                 <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
                   <LuYoutube class="h-7 w-7" />
-                </Button>
-              </a>
-              <a href="https://tiktok.com/@sebacc92" target="_blank">
-                <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
-                  <Tiktok class="h-7 w-7" />
                 </Button>
               </a>
             </div>
@@ -90,7 +90,7 @@ export function HeroSection() {
           {/* Image/Visual */}
           <div class="relative">
             <div class="relative w-full max-w-md mx-auto">
-              <div class="aspect-square rounded-full bg-gradient-to-br from-primary to-secondary p-1">
+              <div class="aspect-square rounded-full bg-linear-to-br from-primary to-secondary p-1">
                 <div class="w-full h-full rounded-full bg-white dark:bg-gray-800 flex items-center justify-center">
                   {/* Light mode image - man working outdoors at night */}
                   <img
