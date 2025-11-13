@@ -53,6 +53,16 @@
     "heroViewWork": "View my work",
     "heroDownloadCV": "Download CV",
     "heroImageAlt1": "Seba working on his laptop outdoors under the stars",
-    "heroImageAlt2": "Seba working on his laptop in the forest during the day"
+    "heroImageAlt2": "Seba working on his laptop in the forest during the day",
+    "navAbout": "",
+    "navSkills": "",
+    "navProjects": "",
+    "navContact": "",
+    "footerDescription": "",
+    "footerQuickLinks": "",
+    "footerSocialMedia": "",
+    "footerMadeWith": "",
+    "footerUsingQwik": "",
+    "contactResponseTime": ""
   }
 }

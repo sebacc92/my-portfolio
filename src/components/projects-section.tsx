@@ -1,7 +1,18 @@
 import { component$ } from "@builder.io/qwik";
 import { _ } from "compiled-i18n";
 
-const personalProjects = [
+type PersonalProject = {
+  id: number;
+  title: string;
+  description: string;
+  technologies: string[];
+  github: string;
+  type: string;
+  featured: boolean;
+  demo?: string;
+};
+
+const personalProjects: PersonalProject[] = [
   {
     id: 1,
     title: "Geounity",
@@ -75,18 +86,18 @@ const freelanceProjects = [
 
 export const ProjectsSection = component$(() => {
   return (
-    <section id="projects" class="py-20 lg:py-28 bg-gradient-to-b from-white via-slate-50 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
+    <section id="projects" class="py-20 lg:py-28 bg-linear-to-b from-white via-slate-50 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
       <div class="container mx-auto px-4 lg:px-6 max-w-7xl">
         {/* Header mejorado */}
         <div class="text-center mb-20 space-y-4">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 border border-blue-200 dark:border-blue-800 mb-4">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-linear-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 border border-blue-200 dark:border-blue-800 mb-4">
             <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
             </svg>
             <span class="text-sm font-semibold text-blue-700 dark:text-blue-300">Portfolio</span>
           </div>
           
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-white dark:via-slate-100 dark:to-white bg-clip-text text-transparent">
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold bg-linear-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-white dark:via-slate-100 dark:to-white bg-clip-text text-transparent">
             {_`projectsTitle`}
           </h2>
           <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
@@ -97,11 +108,11 @@ export const ProjectsSection = component$(() => {
         {/* Personal Projects Section */}
         <div class="mb-24">
           <div class="flex items-center gap-4 mb-12">
-            <div class="h-1 flex-1 bg-gradient-to-r from-transparent via-blue-500 to-blue-500 dark:via-blue-400 dark:to-blue-400 rounded-full"></div>
+            <div class="h-1 flex-1 bg-linear-to-r from-transparent via-blue-500 to-blue-500 dark:via-blue-400 dark:to-blue-400 rounded-full"></div>
             <h3 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
               {_`projectsPersonalTitle`}
             </h3>
-            <div class="h-1 flex-1 bg-gradient-to-l from-transparent via-purple-500 to-purple-500 dark:via-purple-400 dark:to-purple-400 rounded-full"></div>
+            <div class="h-1 flex-1 bg-linear-to-l from-transparent via-purple-500 to-purple-500 dark:via-purple-400 dark:to-purple-400 rounded-full"></div>
           </div>
           
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -111,16 +122,16 @@ export const ProjectsSection = component$(() => {
                 class={`group relative overflow-hidden rounded-2xl border-2 ${project.featured ? 'border-blue-300 dark:border-blue-700' : 'border-slate-200 dark:border-slate-700'} shadow-lg hover:shadow-2xl transition-all duration-500 bg-white dark:bg-slate-800/90 backdrop-blur-sm hover:-translate-y-2`}
               >
                 {project.featured && (
-                  <div class="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-500 rotate-45 flex items-end justify-center pb-8">
+                  <div class="absolute -top-8 -right-8 w-32 h-32 bg-linear-to-br from-blue-500 to-purple-500 rotate-45 flex items-end justify-center pb-8">
                     <span class="text-white text-xs font-bold -rotate-45">Featured</span>
                   </div>
                 )}
                 
-                <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 bg-linear-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
                 <div class="relative p-8">
                   {/* Icono decorativo */}
-                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div class="w-14 h-14 rounded-xl bg-linear-to-br from-blue-500 to-purple-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
                     </svg>
@@ -164,7 +175,7 @@ export const ProjectsSection = component$(() => {
                         href={project.demo} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        class="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                        class="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-white bg-linear-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                       >
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
@@ -182,11 +193,11 @@ export const ProjectsSection = component$(() => {
         {/* Freelance Projects Section */}
         <div>
           <div class="flex items-center gap-4 mb-12">
-            <div class="h-1 flex-1 bg-gradient-to-r from-transparent via-emerald-500 to-emerald-500 dark:via-emerald-400 dark:to-emerald-400 rounded-full"></div>
+            <div class="h-1 flex-1 bg-linear-to-r from-transparent via-emerald-500 to-emerald-500 dark:via-emerald-400 dark:to-emerald-400 rounded-full"></div>
             <h3 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
               {_`projectsFreelanceTitle`}
             </h3>
-            <div class="h-1 flex-1 bg-gradient-to-l from-transparent via-teal-500 to-teal-500 dark:via-teal-400 dark:to-teal-400 rounded-full"></div>
+            <div class="h-1 flex-1 bg-linear-to-l from-transparent via-teal-500 to-teal-500 dark:via-teal-400 dark:to-teal-400 rounded-full"></div>
           </div>
           
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -195,11 +206,11 @@ export const ProjectsSection = component$(() => {
                 key={project.id} 
                 class="group relative overflow-hidden rounded-xl border-2 border-slate-200 dark:border-slate-700 shadow-md hover:shadow-xl transition-all duration-500 bg-white dark:bg-slate-800/90 backdrop-blur-sm hover:-translate-y-2"
               >
-                <div class="absolute inset-0 bg-gradient-to-br from-emerald-50/50 to-teal-50/50 dark:from-emerald-900/10 dark:to-teal-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 bg-linear-to-br from-emerald-50/50 to-teal-50/50 dark:from-emerald-900/10 dark:to-teal-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
                 <div class="relative p-6">
                   {/* Icono decorativo */}
-                  <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                  <div class="w-12 h-12 rounded-lg bg-linear-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                     </svg>
@@ -229,7 +240,7 @@ export const ProjectsSection = component$(() => {
                       href={project.url} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      class="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg"
+                      class="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 text-sm font-semibold text-white bg-linear-to-r from-emerald-600 to-teal-600 rounded-lg hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg"
                     >
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>

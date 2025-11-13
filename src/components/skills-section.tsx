@@ -52,7 +52,7 @@ export const SkillsSection = component$(() => {
           
           {/* Frontend */}
           <div class="group relative rounded-2xl border-2 border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl transition-all duration-300 p-8 bg-white dark:bg-slate-800/90 backdrop-blur-sm hover:-translate-y-1">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/10 dark:to-purple-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-linear-to-br from-blue-50 to-purple-50 dark:from-blue-900/10 dark:to-purple-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div class="relative">
               <div class="flex items-center gap-3 mb-6">
                 <div class="w-1 h-8 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
@@ -81,7 +81,7 @@ export const SkillsSection = component$(() => {
 
           {/* Backend */}
           <div class="group relative rounded-2xl border-2 border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl transition-all duration-300 p-8 bg-white dark:bg-slate-800/90 backdrop-blur-sm hover:-translate-y-1">
-            <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/10 dark:to-emerald-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-linear-to-br from-green-50 to-emerald-50 dark:from-green-900/10 dark:to-emerald-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div class="relative">
               <div class="flex items-center gap-3 mb-6">
                 <div class="w-1 h-8 bg-gradient-to-b from-green-500 to-emerald-500 rounded-full"></div>
@@ -108,7 +108,7 @@ export const SkillsSection = component$(() => {
 
           {/* Testing & QA */}
           <div class="group relative rounded-2xl border-2 border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl transition-all duration-300 p-8 bg-white dark:bg-slate-800/90 backdrop-blur-sm hover:-translate-y-1">
-            <div class="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/10 dark:to-red-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-linear-to-br from-orange-50 to-red-50 dark:from-orange-900/10 dark:to-red-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div class="relative">
               <div class="flex items-center gap-3 mb-6">
                 <div class="w-1 h-8 bg-gradient-to-b from-orange-500 to-red-500 rounded-full"></div>
@@ -126,7 +126,7 @@ export const SkillsSection = component$(() => {
 
           {/* DevOps & Cloud */}
           <div class="group relative rounded-2xl border-2 border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl transition-all duration-300 p-8 bg-white dark:bg-slate-800/90 backdrop-blur-sm hover:-translate-y-1">
-            <div class="absolute inset-0 bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-linear-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div class="relative">
               <div class="flex items-center gap-3 mb-6">
                 <div class="w-1 h-8 bg-gradient-to-b from-cyan-500 to-blue-500 rounded-full"></div>
