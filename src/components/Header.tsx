@@ -22,7 +22,7 @@ export default component$(() => {
       <div class="container mx-auto px-4 h-full">
         <nav class="flex items-center justify-between h-full" aria-label="Main navigation">
           {/* Logo */}
-          <Link href="/" class="flex items-center space-x-2">
+          <Link href="/" class="flex items-center space-x-2 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900 rounded-lg px-1" aria-label={_`Home`}>
             <Logo />
           </Link>
 
@@ -32,7 +32,7 @@ export default component$(() => {
               <a
                 key={item.name}
                 href={item.href}
-                class="transition-colors hover:text-blue-600 dark:hover:text-blue-400 text-gray-700 dark:text-gray-300"
+                class="transition-colors hover:text-blue-600 dark:hover:text-blue-400 text-gray-700 dark:text-gray-300 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900 rounded-lg px-1 py-1"
               >
                 {item.name}
               </a>
@@ -69,7 +69,7 @@ export default component$(() => {
                 <a
                   key={item.name}
                   href={item.href}
-                  class="px-4 py-3 rounded-lg transition-all duration-300 font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  class="px-4 py-3 rounded-lg transition-all duration-300 font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
                   onClick$={() => (isMenuOpen.value = false)}
                 >
                   {item.name}
