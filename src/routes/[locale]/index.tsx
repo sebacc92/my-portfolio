@@ -1,10 +1,58 @@
 import { component$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
+import { routeAction$, type DocumentHead } from "@builder.io/qwik-city";
 import { HeroSection } from "~/components/hero-section";
 import { SkillsSection } from "~/components/skills-section";
 import { ProjectsSection } from "~/components/projects-section";
 // import { TestimonialsSection } from "~/components/testimonials-section";
 import { ContactSection } from "~/components/contact-section";
+import type { ContactFormActionResult, ContactFormData } from "~/types/contact";
+
+export const useContact = routeAction$<ContactFormActionResult, ContactFormData>(async (data, requestEvent) => {
+  const name = data.name?.trim();
+  const email = data.email?.trim();
+  const subject = data.subject?.trim();
+  const message = data.message?.trim();
+
+  if (!name || !email || !subject || !message) {
+    return { success: false, message: "Completa todos los campos requeridos." };
+  }
+
+  const SERVICE_ID = requestEvent.env.get("EMAILJS_SERVICE_ID") ?? import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID = requestEvent.env.get("EMAILJS_TEMPLATE_ID") ?? import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const PUBLIC_KEY = requestEvent.env.get("EMAILJS_PUBLIC_KEY") ?? import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  const PRIVATE_KEY = requestEvent.env.get("EMAILJS_PRIVATE_KEY");
+
+  if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY || !PRIVATE_KEY) {
+    console.error("EmailJS credentials are missing.");
+    return { success: false, message: "No se pudo enviar el mensaje por un error de configuración." };
+  }
+
+  try {
+    await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        service_id: SERVICE_ID,
+        template_id: TEMPLATE_ID,
+        user_id: PUBLIC_KEY,
+        accessToken: PRIVATE_KEY,
+        template_params: {
+          from_name: name,
+          from_email: email,
+          subject,
+          message,
+        },
+      }),
+    });
+
+    return { success: true, message: "¡Mensaje enviado correctamente! Te responderé lo antes posible." };
+  } catch (error) {
+    console.error("EmailJS request failed", error);
+    return { success: false, message: "No se pudo enviar el mensaje. Inténtalo nuevamente." };
+  }
+});
 
 export const head: DocumentHead = ({ url, params }) => {
   // Extract locale from URL pathname (e.g., /en/ or /es/)
@@ -100,13 +148,15 @@ export const head: DocumentHead = ({ url, params }) => {
 };
 
 export default component$(() => {
+  const contactAction = useContact();
+
   return (
     <main class="min-h-screen">
       <HeroSection />
       <SkillsSection />
       <ProjectsSection />
       {/* <TestimonialsSection /> */}
-      <ContactSection />
+      <ContactSection action={contactAction} />
     </main>
   )
 });

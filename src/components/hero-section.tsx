@@ -48,7 +48,7 @@ export function HeroSection() {
                 class="group border-gray-300 dark:border-gray-600 text-slate-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-400 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900 w-full sm:w-auto min-w-[200px]"
                 onClick$={() => {
                   const link = document.createElement('a');
-                  link.href = '/CV-Sebastian Cardoso.pdf';
+                  link.href = '/CV-Sebastian-Cardoso.pdf';
                   link.download = 'Sebastian_Cardoso_CV.pdf';
                   document.body.appendChild(link);
                   link.click();

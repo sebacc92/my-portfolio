@@ -68,6 +68,7 @@
     "footerMadeWith": "Hecho con",
     "footerUsingQwik": "usando Qwik",
     "contactResponseTime": "Generalmente respondo en menos de 24 horas.",
-    "projectsGeounityDescription": "Plataforma geoespacial para gestión de datos geográficos. Desarrollada con Qwik, TypeScript, Python y tecnologías geoespaciales modernas."
+    "projectsGeounityDescription": "Plataforma para gestionar debates entre diferentes comunidades del mundo. Permite moderar conversaciones, organizar temas y promover decisiones colaborativas en tiempo real.",
+    "projectsAmpDescription": "Sitio institucional para la Agremiación Médica Platense. Incluye información sobre servicios, novedades, trámites y canales de contacto para profesionales de la salud."
   }
 }
