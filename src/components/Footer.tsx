@@ -7,7 +7,7 @@ import {
   LuInstagram, 
   LuYoutube
 } from "@qwikest/icons/lucide";
-import Tiktok from "~/media/tiktok.svg?jsx";
+import { FaTiktok } from "@qwikest/icons/font-awesome";
 
 export default component$(() => {
   const socialLinks = [
@@ -44,7 +44,7 @@ export default component$(() => {
     {
       name: "TikTok",
       url: "https://tiktok.com/@sebacc92",
-      icon: Tiktok,
+      icon: FaTiktok,
       color: "hover:text-pink-400"
     }
   ];
