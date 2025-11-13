@@ -21,8 +21,13 @@ export default component$(() => {
           dangerouslySetInnerHTML={`
             (function() {
               try {
-                const theme = localStorage.getItem('theme') || 'dark';
-                document.documentElement.className = theme;
+                var storedTheme = localStorage.getItem('theme');
+                if (!storedTheme) {
+                  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  storedTheme = prefersDark ? 'dark' : 'light';
+                  localStorage.setItem('theme', storedTheme);
+                }
+                document.documentElement.className = storedTheme;
               } catch (e) {}
             })();
           `}

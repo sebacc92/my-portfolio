@@ -3,8 +3,9 @@ import { LuArrowDown, LuDownload, LuGithub, LuInstagram, LuLinkedin, LuTwitter, 
 import { _ } from "compiled-i18n"
 import { NavLink } from "./NavLink"
 import { FaTiktok } from "@qwikest/icons/font-awesome";
-import HeroLightImage from "~/media/hero-light.webp?jsx";
-import HeroDarkImage from "~/media/hero-dark.webp?jsx";
+import SebastianCardosoCastilloImage from "~/media/Sebastian-Cardoso-Castillo.webp?jsx";
+// import HeroLightImage from "~/media/hero-light.webp?jsx";
+// import HeroDarkImage from "~/media/hero-dark.webp?jsx";
 
 export function HeroSection() {
   const socialButtonClass = `${buttonVariants({ look: "ghost", size: "icon" })} h-12 w-12 min-h-[3rem] min-w-[3rem] text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900 transition-transform`;
@@ -35,16 +36,16 @@ export function HeroSection() {
               <NavLink href="#experience">
                 <Button
                   size="lg"
-                  class="bg-linear-to-r from-sky-600 to-blue-700 text-white font-semibold shadow-lg hover:from-sky-700 hover:to-blue-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sky-400 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900 w-full sm:w-auto min-w-[200px]"
+                  class="group bg-linear-to-r from-sky-600 to-blue-700 text-white font-semibold shadow-lg hover:from-sky-700 hover:to-blue-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sky-400 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900 w-full sm:w-auto min-w-[200px]"
                 >
                   {_`heroViewWork`}
-                  <LuArrowDown class="ml-2 h-4 w-4" aria-hidden="true" />
+                  <LuArrowDown class="ml-2 h-4 w-4 transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
                 </Button>
               </NavLink>
               <Button
                 look="outline"
                 size="lg"
-                class="border-gray-300 dark:border-gray-600 text-slate-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-400 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900 w-full sm:w-auto min-w-[200px]"
+                class="group border-gray-300 dark:border-gray-600 text-slate-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-400 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900 w-full sm:w-auto min-w-[200px]"
                 onClick$={() => {
                   const link = document.createElement('a');
                   link.href = '/SebastianCardosoCastilloResume.pdf';
@@ -55,7 +56,7 @@ export function HeroSection() {
                 }}
                 aria-label={_`heroDownloadCV`}
               >
-                <LuDownload class="mr-2 h-4 w-4 transition-transform group-hover:scale-110" aria-hidden="true" />
+                <LuDownload class="mr-2 h-4 w-4 transition-transform group-hover:-translate-y-0.5" aria-hidden="true" />
                 {_`heroDownloadCV`}
               </Button>
             </div>
@@ -127,22 +128,28 @@ export function HeroSection() {
 
           {/* Image/Visual */}
           <div class="relative">
-            <div class="relative w-full max-w-md mx-auto">
+            <div class="relative w-full max-w-[420px] mx-auto">
               <div class="aspect-square rounded-full bg-linear-to-br from-primary to-secondary p-1">
                 <div class="w-full h-full rounded-full bg-white dark:bg-gray-800 flex items-center justify-center">
                   {/* Light mode image - man working outdoors at night */}
-                  <HeroLightImage
+                  {/* <HeroLightImage
                     alt={_`heroImageAlt1`}
                     class="w-full h-full rounded-full object-cover dark:hidden"
+                    loading="lazy"
                     fetchPriority="high"
-                    loading="eager"
-                  />
+                  /> */}
                   {/* Dark mode image - man working in forest during day */}
-                  <HeroDarkImage
+                  {/* <HeroDarkImage
                     alt={_`heroImageAlt2`}
                     class="w-full h-full rounded-full object-cover hidden dark:block"
-                    fetchPriority="high"
                     loading="eager"
+                    fetchPriority="high"
+                  /> */}
+                  <SebastianCardosoCastilloImage
+                    alt={_`heroImageAlt1`}
+                    class="w-full h-full rounded-full object-cover"
+                    loading="lazy"
+                    fetchPriority="high"
                   />
                 </div>
               </div>

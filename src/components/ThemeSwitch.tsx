@@ -1,70 +1,53 @@
-import { component$, createContextId, type Signal, useContextProvider, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, createContextId, type Signal, useContextProvider, useSignal, useVisibleTask$, $ } from "@builder.io/qwik";
 import { _ } from "compiled-i18n";
+import { Button } from "~/components/ui/button/button";
+import { LuMoon, LuSun } from "@qwikest/icons/lucide";
 
 export const ThemeContext = createContextId<Signal<string>>(
     'docs.theme-context'
 );
 
 export const ThemeSwitch = component$(() => {
-    const theme = useSignal('dark');
+    const theme = useSignal<'light' | 'dark'>('dark');
     useContextProvider(ThemeContext, theme);
 
     // eslint-disable-next-line qwik/no-use-visible-task
     useVisibleTask$(() => {
-        // Get initial theme from HTML class (set by inline script)
         const htmlTheme = document.documentElement.className || 'dark';
-        theme.value = htmlTheme;
-        
-        // Sync with localStorage if needed
+        theme.value = htmlTheme as 'light' | 'dark';
+
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme && savedTheme !== htmlTheme) {
-            theme.value = savedTheme;
+            theme.value = savedTheme as 'light' | 'dark';
             document.documentElement.className = savedTheme;
         } else if (!savedTheme) {
             localStorage.setItem('theme', htmlTheme);
         }
     });
 
+    const toggleTheme = $(() => {
+        const newTheme = theme.value === 'light' ? 'dark' : 'light';
+        document.documentElement.className = newTheme;
+        localStorage.setItem('theme', newTheme);
+        theme.value = newTheme;
+    });
+
     return (
-        <label class="theme-toggle inline-flex items-center text-xl md:text-2xl" title="Toggle theme">
-            <input 
-                type="checkbox" 
-                checked={theme.value === 'dark'}
-                onClick$={() => {
-                    const newTheme = theme.value === 'light' ? 'dark' : 'light';
-                    document.documentElement.className = newTheme;
-                    localStorage.setItem('theme', newTheme);
-                    theme.value = newTheme;
-                }}
-            />
-            <span class="theme-toggle-sr">{_`Toggle theme`}</span>
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                width="1em"
-                height="1em"
-                fill="currentColor"
-                stroke-linecap="round"
-                class={`theme-toggle__classic ${theme.value === 'dark' ? 'theme-toggle__classic--dark' : ''}`}
-                viewBox="0 0 32 32"
-            >
-                <clipPath id="theme-toggle__classic__cutout">
-                    <path d="M0-5h30a1 1 0 0 0 9 13v24H0Z" />
-                </clipPath>
-                <g clip-path="url(#theme-toggle__classic__cutout)">
-                    <circle cx="16" cy="16" r="9.34" />
-                    <g stroke="currentColor" stroke-width="1.5">
-                        <path d="M16 5.5v-4" />
-                        <path d="M16 30.5v-4" />
-                        <path d="M1.5 16h4" />
-                        <path d="M26.5 16h4" />
-                        <path d="m23.4 8.6 2.8-2.8" />
-                        <path d="m5.7 26.3 2.9-2.9" />
-                        <path d="m5.8 5.8 2.8 2.8" />
-                        <path d="m23.4 23.4 2.9 2.9" />
-                    </g>
-                </g>
-            </svg>
-        </label>
+        <Button
+            type="button"
+            look="ghost"
+            size="icon"
+            class="relative text-gray-600 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
+            aria-label={theme.value === 'dark' ? _`themeToggleLight` : _`themeToggleDark`}
+            onClick$={toggleTheme}
+        >
+            <span class={theme.value === 'light' ? 'block' : 'hidden'}>
+                <LuSun class="h-5 w-5" aria-hidden="true" />
+            </span>
+            <span class={theme.value === 'dark' ? 'block' : 'hidden'}>
+                <LuMoon class="h-5 w-5" aria-hidden="true" />
+            </span>
+            <span class="sr-only">{_`Toggle theme`}</span>
+        </Button>
     );
 }); 
