@@ -266,28 +266,28 @@ export const ContactSection = component$(() => {
                   >
                     {loading.value ? (
                       <span class="flex items-center justify-center gap-2">
-                        <LuLoader2 class="h-5 w-5 animate-spin" />
-                        <span>Enviando...</span>
+                        <LuLoader2 class="h-5 w-5 animate-spin" aria-hidden="true" />
+                        <span>{_`contactSend`}...</span>
                       </span>
                     ) : (
                       <span class="flex items-center justify-center gap-2">
                         <span>{_`contactSend`}</span>
-                        <LuSend class="h-5 w-5" />
+                        <LuSend class="h-5 w-5" aria-hidden="true" />
                       </span>
                     )}
                   </Button>
 
                   {/* Success Message */}
                   {isSubmitted.value && (
-                    <div class="p-4 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-2 border-green-200 dark:border-green-800 rounded-xl animate-in fade-in slide-in-from-top-4 duration-300">
+                    <div class="p-4 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-2 border-green-200 dark:border-green-800 rounded-xl animate-in fade-in slide-in-from-top-4 duration-300" role="alert" aria-live="polite">
                       <div class="flex items-start gap-3">
-                        <LuCheckCircle2 class="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                        <LuCheckCircle2 class="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
                         <div>
                           <p class="text-green-800 dark:text-green-300 font-semibold">
-                            ¡Mensaje enviado correctamente!
+                            {_`contactMessageSent` || "¡Mensaje enviado correctamente!"}
                           </p>
                           <p class="text-green-700 dark:text-green-400 text-sm mt-1">
-                            Te responderé lo antes posible.
+                            {_`contactResponseTime`}
                           </p>
                         </div>
                       </div>
@@ -296,12 +296,12 @@ export const ContactSection = component$(() => {
 
                   {/* Error Message */}
                   {error.value && (
-                    <div class="p-4 bg-gradient-to-r from-red-50 to-rose-50 dark:from-red-900/20 dark:to-rose-900/20 border-2 border-red-200 dark:border-red-800 rounded-xl animate-in fade-in slide-in-from-top-4 duration-300">
+                    <div class="p-4 bg-gradient-to-r from-red-50 to-rose-50 dark:from-red-900/20 dark:to-rose-900/20 border-2 border-red-200 dark:border-red-800 rounded-xl animate-in fade-in slide-in-from-top-4 duration-300" role="alert" aria-live="assertive">
                       <div class="flex items-start gap-3">
-                        <LuAlertCircle class="h-5 w-5 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
+                        <LuAlertCircle class="h-5 w-5 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
                         <div>
                           <p class="text-red-800 dark:text-red-300 font-semibold">
-                            Error al enviar el mensaje
+                            {_`contactErrorSending` || "Error al enviar el mensaje"}
                           </p>
                           <p class="text-red-700 dark:text-red-400 text-sm mt-1">
                             {error.value}

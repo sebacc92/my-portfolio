@@ -60,10 +60,10 @@ export default component$(() => {
   ];
 
   const quickLinks = [
-    { name: _`navAbout`, href: "#about" },
-    { name: _`navSkills`, href: "#skills" },
-    { name: _`navProjects`, href: "#projects" },
-    { name: _`navContact`, href: "#contact" }
+    { name: _`Home`, href: "#home" },
+    { name: _`Skills`, href: "#skills" },
+    { name: _`Projects`, href: "#projects" },
+    { name: _`Contact`, href: "#contact" }
   ];
 
   return (

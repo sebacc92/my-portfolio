@@ -53,38 +53,38 @@ export function HeroSection() {
             </div>
 
             {/* Social Links */}
-            <div class="flex gap-4 justify-center lg:justify-start">
-              <a href="https://github.com/sebacc92" target="_blank">
+            <nav class="flex gap-4 justify-center lg:justify-start" aria-label="Social media links">
+              <a href="https://github.com/sebacc92" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
                 <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
-                  <LuGithub class="h-7 w-7" />
+                  <LuGithub class="h-7 w-7" aria-hidden="true" />
                 </Button>
               </a>
-              <a href="https://linkedin.com/in/sebastiancardoso92/" target="_blank">
+              <a href="https://linkedin.com/in/sebastiancardoso92/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
                 <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
-                  <LuLinkedin class="h-7 w-7" />
+                  <LuLinkedin class="h-7 w-7" aria-hidden="true" />
                 </Button>
               </a>
-              <a href="https://instagram.com/sebacc92" target="_blank">
+              <a href="https://instagram.com/sebacc92" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
                 <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
-                  <LuInstagram class="h-7 w-7" />
+                  <LuInstagram class="h-7 w-7" aria-hidden="true" />
                 </Button>
               </a>
-              <a href="https://tiktok.com/@sebacc92" target="_blank">
+              <a href="https://tiktok.com/@sebacc92" target="_blank" rel="noopener noreferrer" aria-label="TikTok profile">
                 <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
-                  <FaTiktok class="h-6 w-6" />
+                  <FaTiktok class="h-6 w-6" aria-hidden="true" />
                 </Button>
               </a>
-              <a href="https://x.com/sebacc92" target="_blank">
+              <a href="https://x.com/sebacc92" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X profile">
                 <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
-                  <LuTwitter class="h-7 w-7" />
+                  <LuTwitter class="h-7 w-7" aria-hidden="true" />
                 </Button>
               </a>
-              <a href="https://youtube.com/@sebacc92" target="_blank">
+              <a href="https://youtube.com/@sebacc92" target="_blank" rel="noopener noreferrer" aria-label="YouTube channel">
                 <Button look="ghost" size="sm" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
-                  <LuYoutube class="h-7 w-7" />
+                  <LuYoutube class="h-7 w-7" aria-hidden="true" />
                 </Button>
               </a>
-            </div>
+            </nav>
           </div>
 
           {/* Image/Visual */}
@@ -96,20 +96,30 @@ export function HeroSection() {
                   <img
                     src="/hero-light.webp"
                     alt={_`heroImageAlt1`}
+                    width={400}
+                    height={400}
                     class="w-full h-full rounded-full object-cover dark:hidden"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
                   />
                   {/* Dark mode image - man working in forest during day */}
                   <img
                     src="/hero-dark.webp"
                     alt={_`heroImageAlt2`}
+                    width={400}
+                    height={400}
                     class="w-full h-full rounded-full object-cover hidden dark:block"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
                   />
                 </div>
               </div>
 
               {/* Floating Elements */}
-              <div class="absolute -top-4 -right-4 w-20 h-20 bg-primary/20 dark:bg-primary/30 rounded-full animate-bounce"></div>
-              <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-secondary/20 dark:bg-secondary/30 rounded-full animate-pulse"></div>
+              <div class="absolute -top-4 -right-4 w-20 h-20 bg-primary/20 dark:bg-primary/30 rounded-full animate-bounce" aria-hidden="true"></div>
+              <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-secondary/20 dark:bg-secondary/30 rounded-full animate-pulse" aria-hidden="true"></div>
             </div>
           </div>
         </div>

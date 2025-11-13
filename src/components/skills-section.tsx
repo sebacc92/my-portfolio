@@ -71,7 +71,15 @@ export const SkillsSection = component$(() => {
                 <SkillIcon title="Nuxt"><NuxtLogo height={56} width={56} /></SkillIcon>
                 <SkillIcon title="Webpack"><WebpackLogo height={56} width={56} /></SkillIcon>
                 <SkillIcon title="Vite">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" height={56} width={56} alt="Vite" class="transition-transform duration-300 group-hover:scale-110" />
+                  <img 
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" 
+                    height={56} 
+                    width={56} 
+                    alt="Vite" 
+                    class="transition-transform duration-300 group-hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </SkillIcon>
                 <SkillIcon title="Sass"><SassLogo height={56} width={56} /></SkillIcon>
                 <SkillIcon title="Tailwind CSS"><TailwindcssLogo height={56} width={56} /></SkillIcon>

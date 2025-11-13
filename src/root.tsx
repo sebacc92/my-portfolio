@@ -16,6 +16,17 @@ export default component$(() => {
     <QwikCityProvider>
       <head>
         <meta charset="utf-8" />
+        {/* Theme initialization script - prevents flash of unstyled content */}
+        <script
+          dangerouslySetInnerHTML={`
+            (function() {
+              try {
+                const theme = localStorage.getItem('theme') || 'dark';
+                document.documentElement.className = theme;
+              } catch (e) {}
+            })();
+          `}
+        />
         {!isDev && (
           <link
             rel="manifest"

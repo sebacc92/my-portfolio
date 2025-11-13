@@ -6,19 +6,22 @@ export const ThemeContext = createContextId<Signal<string>>(
 );
 
 export const ThemeSwitch = component$(() => {
-    const theme = useSignal('light');
+    const theme = useSignal('dark');
     useContextProvider(ThemeContext, theme);
 
     // eslint-disable-next-line qwik/no-use-visible-task
     useVisibleTask$(() => {
+        // Get initial theme from HTML class (set by inline script)
+        const htmlTheme = document.documentElement.className || 'dark';
+        theme.value = htmlTheme;
+        
+        // Sync with localStorage if needed
         const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
+        if (savedTheme && savedTheme !== htmlTheme) {
             theme.value = savedTheme;
             document.documentElement.className = savedTheme;
-        } else {
-            // Default to dark mode
-            theme.value = 'dark';
-            document.documentElement.className = 'dark';
+        } else if (!savedTheme) {
+            localStorage.setItem('theme', htmlTheme);
         }
     });
 

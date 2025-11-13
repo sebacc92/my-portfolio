@@ -1,19 +1,17 @@
-import { component$, getLocale, useSignal } from "@builder.io/qwik";
+import { component$, useSignal } from "@builder.io/qwik";
 import { Button } from "~/components/ui/button/button"
 import { LuMenu, LuX } from "@qwikest/icons/lucide";
 import { _ } from "compiled-i18n";
 import Logo from "~/components/Logo";
 import { LocaleSelector } from "./locale-selector";
 import { ThemeSwitch } from "~/components/ThemeSwitch";
-import { NavLink } from "./NavLink";
 import { Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
   const isMenuOpen = useSignal(false);
-  const currentLocale = getLocale()
 
   const navigation = [
-    { name: _`Home`, href: "/" },
+    { name: _`Home`, href: "#home" },
     { name: _`Skills`, href: "#skills" },
     { name: _`Projects`, href: "#projects" },
     { name: _`Contact`, href: "#contact" },
@@ -21,8 +19,8 @@ export default component$(() => {
 
   return (
     <header class="fixed top-0 left-0 right-0 z-50 h-16 bg-white dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 shadow-sm">
-      <nav class="container mx-auto px-4 h-full">
-        <div class="flex items-center justify-between h-full">
+      <div class="container mx-auto px-4 h-full">
+        <nav class="flex items-center justify-between h-full" aria-label="Main navigation">
           {/* Logo */}
           <Link href="/" class="flex items-center space-x-2">
             <Logo />
@@ -31,14 +29,13 @@ export default component$(() => {
           {/* Desktop Navigation */}
           <div class="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
-              <NavLink
+              <a
                 key={item.name}
-                href={`/${currentLocale}${item.href}`}
+                href={item.href}
                 class="transition-colors hover:text-blue-600 dark:hover:text-blue-400 text-gray-700 dark:text-gray-300"
-                activeClass="text-blue-600! dark:text-blue-400! font-semibold!"
               >
                 {item.name}
-              </NavLink>
+              </a>
             ))}
           </div>
 
@@ -51,31 +48,37 @@ export default component$(() => {
             <ThemeSwitch />
 
             {/* Mobile Menu Button */}
-            <Button look="ghost" size="icon" class="md:hidden text-gray-700 dark:text-gray-300" onClick$={() => (isMenuOpen.value = !isMenuOpen.value)} aria-label="Toggle menu">
-              {isMenuOpen.value ? <LuX class="h-5 w-5" /> : <LuMenu class="h-5 w-5" />}
+            <Button 
+              look="ghost" 
+              size="icon" 
+              class="md:hidden text-gray-700 dark:text-gray-300" 
+              onClick$={() => (isMenuOpen.value = !isMenuOpen.value)} 
+              aria-label={isMenuOpen.value ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen.value}
+            >
+              {isMenuOpen.value ? <LuX class="h-5 w-5" aria-hidden="true" /> : <LuMenu class="h-5 w-5" aria-hidden="true" />}
             </Button>
           </div>
-        </div>
+        </nav>
 
         {/* Mobile Navigation */}
         {isMenuOpen.value && (
-          <div class="md:hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/95 backdrop-blur-md">
+          <nav class="md:hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/95 backdrop-blur-md" aria-label="Mobile navigation">
             <div class="flex flex-col space-y-3 pt-4">
               {navigation.map((item) => (
-                <NavLink
+                <a
                   key={item.name}
-                  href={`/${currentLocale}${item.href}`}
+                  href={item.href}
                   class="px-4 py-3 rounded-lg transition-all duration-300 font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-                  activeClass="bg-blue-600! text-white! shadow-lg!"
                   onClick$={() => (isMenuOpen.value = false)}
                 >
                   {item.name}
-                </NavLink>
+                </a>
               ))}
             </div>
-          </div>
+          </nav>
         )}
-      </nav>
+      </div>
     </header>
   );
 });
