@@ -148,7 +148,6 @@ export function HeroSection() {
                   <SebastianCardosoCastilloImage
                     alt={_`heroImageAlt1`}
                     class="w-full h-full rounded-full object-cover"
-                    loading="lazy"
                     fetchPriority="high"
                   />
                 </div>
