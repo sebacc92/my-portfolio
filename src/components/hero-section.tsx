@@ -9,7 +9,7 @@ export function HeroSection() {
   const socialButtonClass = `${buttonVariants({ look: "ghost", size: "icon" })} h-12 w-12 min-h-[3rem] min-w-[3rem] text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900 transition-transform`;
 
   return (
-    <section id="home" class="py-24 md:py-28 lg:py-32 xl:py-40 flex items-center justify-center relative overflow-hidden bg-linear-to-br from-blue-50 via-indigo-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <section id="home" class="md:py-20 lg:py-32 xl:py-40 flex items-center justify-center relative overflow-hidden bg-linear-to-br from-blue-50 via-indigo-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Gradient Background */}
       <div class="absolute inset-0 bg-linear-to-br from-primary via-secondary to-accent opacity-10 dark:opacity-20"></div>
 
@@ -129,21 +129,8 @@ export function HeroSection() {
             <div class="relative w-full max-w-[420px] mx-auto">
               <div class="aspect-square rounded-full bg-linear-to-br from-primary to-secondary p-1">
                 <div class="w-full h-full rounded-full bg-white dark:bg-gray-800 flex items-center justify-center">
-                  {/* Light mode image - man working outdoors at night */}
-                  {/* <HeroLightImage
-                    alt={_`heroImageAlt1`}
-                    class="w-full h-full rounded-full object-cover dark:hidden"
-                    loading="lazy"
-                    fetchPriority="high"
-                  /> */}
-                  {/* Dark mode image - man working in forest during day */}
-                  {/* <HeroDarkImage
-                    alt={_`heroImageAlt2`}
-                    class="w-full h-full rounded-full object-cover hidden dark:block"
-                    loading="eager"
-                    fetchPriority="high"
-                  /> */}
                   <SebastianCardosoCastilloImage
+                    loading="eager"
                     alt={_`heroImageAlt`}
                     class="w-full h-full rounded-full object-cover"
                     fetchPriority="high"

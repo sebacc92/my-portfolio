@@ -11,7 +11,6 @@ export default component$(() => {
   const isMenuOpen = useSignal(false);
 
   const navigation = [
-    { name: _`Home`, href: "#home" },
     { name: _`Skills`, href: "#skills" },
     { name: _`Projects`, href: "#projects" },
     { name: _`Contact`, href: "#contact" },
