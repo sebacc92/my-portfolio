@@ -3,9 +3,7 @@ import { LuArrowDown, LuDownload, LuGithub, LuInstagram, LuLinkedin, LuYoutube }
 import { _ } from "compiled-i18n"
 import { NavLink } from "./NavLink"
 import { FaTiktok, FaXTwitter } from "@qwikest/icons/font-awesome";
-import SebastianCardosoCastilloImage from "~/media/Sebastian-Cardoso-Castillo.webp?jsx";
-// import HeroLightImage from "~/media/hero-light.webp?jsx";
-// import HeroDarkImage from "~/media/hero-dark.webp?jsx";
+import SebastianCardosoCastilloImage from "~/media/Sebastian-Cardoso-Castillo.avif?jsx";
 
 export function HeroSection() {
   const socialButtonClass = `${buttonVariants({ look: "ghost", size: "icon" })} h-12 w-12 min-h-[3rem] min-w-[3rem] text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900 transition-transform`;
@@ -146,7 +144,7 @@ export function HeroSection() {
                     fetchPriority="high"
                   /> */}
                   <SebastianCardosoCastilloImage
-                    alt={_`heroImageAlt1`}
+                    alt={_`heroImageAlt`}
                     class="w-full h-full rounded-full object-cover"
                     fetchPriority="high"
                   />
