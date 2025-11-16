@@ -35,7 +35,7 @@ export const LocaleSelector = component$(() => {
 	});
 	
 	return (
-		<div class="relative" role="combobox" aria-expanded={isOpen.value} aria-haspopup="listbox">
+		<div class="relative" role="combobox" aria-expanded={isOpen.value} aria-haspopup="listbox" aria-label="Select language">
 			<Button 
 				look="ghost" 
 				size="icon" 

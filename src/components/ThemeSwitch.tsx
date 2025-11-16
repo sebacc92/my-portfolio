@@ -39,7 +39,7 @@ export const ThemeSwitch = component$(() => {
             size="icon"
             class="relative text-gray-600 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
             aria-label={theme.value === 'dark' ? _`themeToggleLight` : _`themeToggleDark`}
-            aria-pressed={theme.value === 'dark'}
+            aria-checked={theme.value === 'dark'}
             role="switch"
             onClick$={toggleTheme}
         >
