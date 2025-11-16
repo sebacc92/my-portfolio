@@ -1,15 +1,19 @@
 import { $, component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
-import { Form, type ActionStore } from "@builder.io/qwik-city";
+import { Form } from "@builder.io/qwik-city";
 import { _ } from "compiled-i18n";
+import { LuMail, LuMapPin, LuSend, LuLoader2, LuCopy, LuCheckCircle2 } from "@qwikest/icons/lucide";
 import { Button } from "~/components/ui/button/button";
-import { LuMail, LuMapPin, LuSend, LuLoader2, LuCopy, LuCheckCircle2, LuAlertCircle } from "@qwikest/icons/lucide";
-import type { ContactFormActionResult, ContactFormData } from "~/types/contact";
+import { usePopover } from "@qwik-ui/headless";
+import Toast from "~/components/ui/toast/toast";
+import { useContact } from "~/routes/[locale]";
 
-interface ContactSectionProps {
-  action: ActionStore<ContactFormActionResult, ContactFormData>;
-}
+export const ContactSection = component$(() => {
+  const action = useContact();
 
-export const ContactSection = component$(({ action }: ContactSectionProps) => {
+  const toastType = useSignal<'success' | 'error'>('success');
+  const toastMsg = useSignal('');
+  const { showPopover } = usePopover('contact-toast');
+
   const emailCopied = useSignal(false);
   const formRef = useSignal<HTMLFormElement>();
 
@@ -35,16 +39,28 @@ export const ContactSection = component$(({ action }: ContactSectionProps) => {
     }
   });
 
-  // eslint-disable-next-line qwik/no-use-visible-task
+  // Mostrar toast y resetear al terminar
   useVisibleTask$(({ track }) => {
     track(() => action.value);
-    if (action.value?.success) {
-      requestAnimationFrame(() => formRef.value?.reset());
-    }
-  });
+    if (!action.value) return;
 
-  const successMessage = action.value?.success ? action.value.message ?? _`contactMessageSent` : null;
-  const errorMessage = action.value && !action.value.success ? action.value.message ?? _`contactErrorSending` : null;
+    const { success, message } = action.value;
+    toastType.value = success ? 'success' : 'error';
+    toastMsg.value = message ?? (success ? '¡Mensaje enviado!' : 'Ocurrió un error');
+    
+    // Usar requestAnimationFrame para evitar reflow forzado
+    // cuando se muestre el popover y se modifique el DOM
+    requestAnimationFrame(() => {
+        showPopover();
+        
+        if (success) {
+            // Resetear el formulario en el siguiente frame para evitar reflow
+            requestAnimationFrame(() => {
+                formRef.value?.reset();
+            });
+        }
+    });
+  });
 
   return (
     <section id="contact" class="py-20 lg:py-28 bg-linear-to-b from-white via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300 relative overflow-hidden">
@@ -227,44 +243,20 @@ export const ContactSection = component$(({ action }: ContactSectionProps) => {
                       </span>
                     )}
                   </Button>
-
-                  {successMessage && (
-                    <div class="p-4 bg-linear-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-2 border-green-200 dark:border-green-800 rounded-xl animate-in fade-in slide-in-from-top-4 duration-300" role="alert" aria-live="polite">
-                      <div class="flex items-start gap-3">
-                        <LuCheckCircle2 class="h-5 w-5 text-green-600 dark:text-green-400 shrink-0 mt-0.5" aria-hidden="true" />
-                        <div>
-                          <p class="text-green-800 dark:text-green-300 font-semibold">
-                            {_`contactMessageSent`}
-                          </p>
-                          <p class="text-green-700 dark:text-green-400 text-sm mt-1">
-                            {successMessage}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {errorMessage && (
-                    <div class="p-4 bg-linear-to-r from-red-50 to-rose-50 dark:from-red-900/20 dark:to-rose-900/20 border-2 border-red-200 dark:border-red-800 rounded-xl animate-in fade-in slide-in-from-top-4 duration-300" role="alert" aria-live="assertive">
-                      <div class="flex items-start gap-3">
-                        <LuAlertCircle class="h-5 w-5 text-red-600 dark:text-red-400 shrink-0 mt-0.5" aria-hidden="true" />
-                        <div>
-                          <p class="text-red-800 dark:text-red-300 font-semibold">
-                            {_`contactErrorSending`}
-                          </p>
-                          <p class="text-red-700 dark:text-red-400 text-sm mt-1">
-                            {errorMessage}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  )}
                 </Form>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {/* Toast bottom-center */}
+      <Toast
+          id="contact-toast"
+          type={toastType.value}
+          title={toastType.value === 'success' ? '¡Listo!' : 'Ups...'}
+          message={toastMsg.value}
+          duration={4000}
+      />
     </section>
   );
 });

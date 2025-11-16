@@ -1,8 +1,8 @@
 import { Button, buttonVariants } from "~/components/ui/button/button"
-import { LuArrowDown, LuDownload, LuGithub, LuInstagram, LuLinkedin, LuTwitter, LuYoutube } from "@qwikest/icons/lucide"
+import { LuArrowDown, LuDownload, LuGithub, LuInstagram, LuLinkedin, LuYoutube } from "@qwikest/icons/lucide"
 import { _ } from "compiled-i18n"
 import { NavLink } from "./NavLink"
-import { FaTiktok } from "@qwikest/icons/font-awesome";
+import { FaTiktok, FaXTwitter } from "@qwikest/icons/font-awesome";
 import SebastianCardosoCastilloImage from "~/media/Sebastian-Cardoso-Castillo.webp?jsx";
 // import HeroLightImage from "~/media/hero-light.webp?jsx";
 // import HeroDarkImage from "~/media/hero-dark.webp?jsx";
@@ -11,7 +11,7 @@ export function HeroSection() {
   const socialButtonClass = `${buttonVariants({ look: "ghost", size: "icon" })} h-12 w-12 min-h-[3rem] min-w-[3rem] text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900 transition-transform`;
 
   return (
-    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-linear-to-br from-blue-50 via-indigo-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <section id="home" class="py-24 md:py-28 lg:py-32 xl:py-40 flex items-center justify-center relative overflow-hidden bg-linear-to-br from-blue-50 via-indigo-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Gradient Background */}
       <div class="absolute inset-0 bg-linear-to-br from-primary via-secondary to-accent opacity-10 dark:opacity-20"></div>
 
@@ -33,7 +33,7 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              <NavLink href="#experience">
+              <NavLink href="#projects">
                 <Button
                   size="lg"
                   class="group bg-linear-to-r from-sky-600 to-blue-700 text-white font-semibold shadow-lg hover:from-sky-700 hover:to-blue-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sky-400 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900 w-full sm:w-auto min-w-[200px]"
@@ -62,7 +62,7 @@ export function HeroSection() {
             </div>
 
             {/* Social Links */}
-            <nav class="flex gap-3 flex-wrap justify-center lg:justify-start" aria-label="Social media links">
+            <nav class="flex gap-4 flex-wrap justify-center lg:justify-start" aria-label="Social media links">
               <a
                 href="https://github.com/sebacc92"
                 target="_blank"
@@ -71,7 +71,7 @@ export function HeroSection() {
                 class={socialButtonClass}
                 title="GitHub"
               >
-                <LuGithub class="h-7 w-7" aria-hidden="true" />
+                <LuGithub class="h-8 w-8" aria-hidden="true" />
               </a>
               <a
                 href="https://linkedin.com/in/sebastiancardoso92/"
@@ -81,7 +81,7 @@ export function HeroSection() {
                 class={socialButtonClass}
                 title="LinkedIn"
               >
-                <LuLinkedin class="h-7 w-7" aria-hidden="true" />
+                <LuLinkedin class="h-8 w-8" aria-hidden="true" />
               </a>
               <a
                 href="https://instagram.com/sebacc92"
@@ -91,7 +91,7 @@ export function HeroSection() {
                 class={socialButtonClass}
                 title="Instagram"
               >
-                <LuInstagram class="h-7 w-7" aria-hidden="true" />
+                <LuInstagram class="h-8 w-8" aria-hidden="true" />
               </a>
               <a
                 href="https://tiktok.com/@sebacc92"
@@ -111,7 +111,7 @@ export function HeroSection() {
                 class={socialButtonClass}
                 title="Twitter / X"
               >
-                <LuTwitter class="h-7 w-7" aria-hidden="true" />
+                <FaXTwitter class="h-8 w-8" aria-hidden="true" />
               </a>
               <a
                 href="https://youtube.com/@sebacc92"
@@ -121,7 +121,7 @@ export function HeroSection() {
                 class={socialButtonClass}
                 title="YouTube"
               >
-                <LuYoutube class="h-7 w-7" aria-hidden="true" />
+                <LuYoutube class="h-8 w-8" aria-hidden="true" />
               </a>
             </nav>
           </div>
