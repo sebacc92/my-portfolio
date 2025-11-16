@@ -35,11 +35,11 @@ import { _ } from "compiled-i18n";
 
 export const SkillsSection = component$(() => {
   return (
-    <section id="skills" class="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 transition-colors duration-300">
+    <section id="skills" class="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 transition-colors duration-300" aria-labelledby="skills-heading">
       <div class="container mx-auto px-4 lg:px-6">
         {/* Header */}
         <div class="text-center mb-16 space-y-4 max-w-3xl mx-auto">
-          <h2 class="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-white dark:via-slate-100 dark:to-white bg-clip-text text-transparent">
+          <h2 id="skills-heading" class="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-white dark:via-slate-100 dark:to-white bg-clip-text text-transparent">
             {_`skillsTitle`}
           </h2>
           <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -52,7 +52,7 @@ export const SkillsSection = component$(() => {
           
           {/* Frontend */}
           <div class="group relative rounded-2xl border-2 border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl transition-all duration-300 p-8 bg-white dark:bg-slate-800/90 backdrop-blur-sm hover:-translate-y-1">
-            <div class="absolute inset-0 bg-linear-to-br from-blue-50 to-purple-50 dark:from-blue-900/10 dark:to-purple-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-linear-to-br from-blue-50 to-purple-50 dark:from-blue-900/10 dark:to-purple-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" role="presentation"></div>
             <div class="relative">
               <div class="flex items-center gap-3 mb-6">
                 <div class="w-1 h-8 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
@@ -89,7 +89,7 @@ export const SkillsSection = component$(() => {
 
           {/* Backend */}
           <div class="group relative rounded-2xl border-2 border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl transition-all duration-300 p-8 bg-white dark:bg-slate-800/90 backdrop-blur-sm hover:-translate-y-1">
-            <div class="absolute inset-0 bg-linear-to-br from-green-50 to-emerald-50 dark:from-green-900/10 dark:to-emerald-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-linear-to-br from-green-50 to-emerald-50 dark:from-green-900/10 dark:to-emerald-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" role="presentation"></div>
             <div class="relative">
               <div class="flex items-center gap-3 mb-6">
                 <div class="w-1 h-8 bg-gradient-to-b from-green-500 to-emerald-500 rounded-full"></div>
@@ -116,7 +116,7 @@ export const SkillsSection = component$(() => {
 
           {/* Testing & QA */}
           <div class="group relative rounded-2xl border-2 border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl transition-all duration-300 p-8 bg-white dark:bg-slate-800/90 backdrop-blur-sm hover:-translate-y-1">
-            <div class="absolute inset-0 bg-linear-to-br from-orange-50 to-red-50 dark:from-orange-900/10 dark:to-red-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-linear-to-br from-orange-50 to-red-50 dark:from-orange-900/10 dark:to-red-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" role="presentation"></div>
             <div class="relative">
               <div class="flex items-center gap-3 mb-6">
                 <div class="w-1 h-8 bg-gradient-to-b from-orange-500 to-red-500 rounded-full"></div>
@@ -134,7 +134,7 @@ export const SkillsSection = component$(() => {
 
           {/* DevOps & Cloud */}
           <div class="group relative rounded-2xl border-2 border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl transition-all duration-300 p-8 bg-white dark:bg-slate-800/90 backdrop-blur-sm hover:-translate-y-1">
-            <div class="absolute inset-0 bg-linear-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-linear-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" role="presentation"></div>
             <div class="relative">
               <div class="flex items-center gap-3 mb-6">
                 <div class="w-1 h-8 bg-gradient-to-b from-cyan-500 to-blue-500 rounded-full"></div>
@@ -159,14 +159,17 @@ export const SkillsSection = component$(() => {
 const SkillIcon = component$<{ title: string }>(({ title }) => {
   return (
     <div 
-      class="group relative p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50 hover:bg-white dark:hover:bg-slate-600/50 border border-slate-200 dark:border-slate-600 hover:border-slate-300 dark:hover:border-slate-500 transition-all duration-300 hover:shadow-md hover:-translate-y-1 cursor-pointer"
+      class="group relative p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50 hover:bg-white dark:hover:bg-slate-600/50 border border-slate-200 dark:border-slate-600 hover:border-slate-300 dark:hover:border-slate-500 transition-all duration-300 hover:shadow-md hover:-translate-y-1 cursor-pointer focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2"
       title={title}
+      role="img"
+      aria-label={title}
+      tabIndex={0}
     >
       <div class="relative z-10 transition-transform duration-300 group-hover:scale-110">
         <Slot />
       </div>
       {/* Tooltip mejorado */}
-      <div class="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-slate-900 dark:bg-slate-700 text-white text-xs font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none shadow-lg">
+      <div class="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-slate-900 dark:bg-slate-700 text-white text-xs font-medium rounded-lg opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none shadow-lg" aria-hidden="true">
         {title}
         <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-900 dark:bg-slate-700 rotate-45"></div>
       </div>

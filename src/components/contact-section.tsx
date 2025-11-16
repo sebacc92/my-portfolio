@@ -63,15 +63,15 @@ export const ContactSection = component$(() => {
   });
 
   return (
-    <section id="contact" class="py-20 lg:py-28 bg-linear-to-b from-white via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300 relative overflow-hidden">
-      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <section id="contact" class="py-20 lg:py-28 bg-linear-to-b from-white via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300 relative overflow-hidden" aria-labelledby="contact-heading">
+      <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true" role="presentation">
         <div class="absolute -top-40 -right-40 w-80 h-80 bg-linear-to-br from-blue-400/20 to-purple-400/20 dark:from-blue-600/10 dark:to-purple-600/10 rounded-full blur-3xl"></div>
         <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-linear-to-tr from-emerald-400/20 to-teal-400/20 dark:from-emerald-600/10 dark:to-teal-600/10 rounded-full blur-3xl"></div>
       </div>
 
       <div class="container mx-auto px-4 lg:px-6 relative z-10">
         <div class="text-center mb-16 space-y-4">
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold bg-linear-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-white dark:via-slate-100 dark:to-white bg-clip-text text-transparent">
+          <h2 id="contact-heading" class="text-4xl md:text-5xl lg:text-6xl font-bold bg-linear-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-white dark:via-slate-100 dark:to-white bg-clip-text text-transparent">
             {_`contactTitle`}
           </h2>
           <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
@@ -92,7 +92,7 @@ export const ContactSection = component$(() => {
 
             <div class="space-y-6">
               <div class="group relative overflow-hidden rounded-2xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/90 p-6 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-lg">
-                <div class="absolute inset-0 bg-linear-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute inset-0 bg-linear-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" role="presentation"></div>
 
                 <div class="relative flex items-start gap-4">
                   <div class="w-12 h-12 rounded-xl bg-linear-to-br from-blue-500 to-purple-500 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
@@ -113,18 +113,22 @@ export const ContactSection = component$(() => {
                       <button
                         onClick$={copyEmail$}
                         title={_`contactCopy`}
-                        class="p-1.5 hover:bg-blue-100 dark:hover:bg-blue-900/30 rounded-lg transition-all duration-300 group/btn shrink-0"
+                        aria-label={emailCopied.value ? _`contactCopied` : _`contactCopy`}
+                        aria-pressed={emailCopied.value}
+                        class="p-1.5 hover:bg-blue-100 dark:hover:bg-blue-900/30 rounded-lg transition-all duration-300 group/btn shrink-0 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                         disabled={emailCopied.value}
+                        type="button"
                       >
                         {emailCopied.value ? (
-                          <LuCheckCircle2 class="h-4 w-4 text-green-600 dark:text-green-400" />
+                          <LuCheckCircle2 class="h-4 w-4 text-green-600 dark:text-green-400" aria-hidden="true" />
                         ) : (
-                          <LuCopy class="h-4 w-4 text-slate-400 group-hover/btn:text-blue-600 dark:group-hover/btn:text-blue-400 transition-colors" />
+                          <LuCopy class="h-4 w-4 text-slate-400 group-hover/btn:text-blue-600 dark:group-hover/btn:text-blue-400 transition-colors" aria-hidden="true" />
                         )}
+                        <span class="sr-only">{emailCopied.value ? _`contactCopied` : _`contactCopy`}</span>
                       </button>
                     </div>
                     {emailCopied.value && (
-                      <span class="text-xs text-green-600 dark:text-green-400 font-medium mt-1 inline-block animate-in fade-in duration-200">
+                      <span class="text-xs text-green-600 dark:text-green-400 font-medium mt-1 inline-block animate-in fade-in duration-200" role="status" aria-live="polite">
                         {_`contactCopied`}
                       </span>
                     )}
@@ -133,7 +137,7 @@ export const ContactSection = component$(() => {
               </div>
 
               <div class="group relative overflow-hidden rounded-2xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/90 p-6 hover:border-emerald-300 dark:hover:border-emerald-600 transition-all duration-300 hover:shadow-lg">
-                <div class="absolute inset-0 bg-linear-to-br from-emerald-50/50 to-teal-50/50 dark:from-emerald-900/10 dark:to-teal-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute inset-0 bg-linear-to-br from-emerald-50/50 to-teal-50/50 dark:from-emerald-900/10 dark:to-teal-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" role="presentation"></div>
 
                 <div class="relative flex items-start gap-4">
                   <div class="w-12 h-12 rounded-xl bg-linear-to-br from-emerald-500 to-teal-500 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
@@ -161,7 +165,7 @@ export const ContactSection = component$(() => {
 
           <div class="lg:col-span-3">
             <div class="relative overflow-hidden rounded-2xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/90 shadow-xl backdrop-blur-sm">
-              <div class="absolute inset-0 bg-linear-to-br from-blue-50/30 to-purple-50/30 dark:from-blue-900/5 dark:to-purple-900/5"></div>
+              <div class="absolute inset-0 bg-linear-to-br from-blue-50/30 to-purple-50/30 dark:from-blue-900/5 dark:to-purple-900/5" aria-hidden="true" role="presentation"></div>
 
               <div class="relative p-6 md:p-8">
                 <Form action={action} class="space-y-6" ref={formRef}>

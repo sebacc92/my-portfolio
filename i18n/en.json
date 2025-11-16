@@ -51,6 +51,8 @@
     "Toggle theme": "Toggle theme",
     "themeToggleLight": "Switch to light theme",
     "themeToggleDark": "Switch to dark theme",
+    "Open menu": "Open menu",
+    "Close menu": "Close menu",
     "heroGreeting": "Hello, I'm",
     "heroTitle": "Frontend Developer",
     "heroDescription": "Building modern web experiences with a focus on performance, accessibility and attractive design.",

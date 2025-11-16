@@ -67,7 +67,7 @@ export default component$(() => {
   ];
 
   return (
-    <footer class="bg-linear-to-t from-slate-900 via-slate-800 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-white border-t border-slate-700 dark:border-slate-800">
+    <footer class="bg-linear-to-t from-slate-900 via-slate-800 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-white border-t border-slate-700 dark:border-slate-800" role="contentinfo">
       <div class="container mx-auto px-4 lg:px-6">
         {/* Main Footer Content */}
         <div class="py-12 lg:py-16">
@@ -92,7 +92,8 @@ export default component$(() => {
               <div class="space-y-2 pt-2">
                 <a 
                   href="mailto:sebastiancardoso92@gmail.com"
-                  class="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors group w-fit"
+                  class="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors group w-fit focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded"
+                  aria-label="Send email to sebastiancardoso92@gmail.com"
                 >
                   <LuMail class="w-4 h-4 group-hover:scale-110 transition-transform" />
                   <span class="text-sm">sebastiancardoso92@gmail.com</span>
@@ -115,7 +116,8 @@ export default component$(() => {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      class="text-slate-300 hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center gap-2 group w-fit"
+                      class="text-slate-300 hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center gap-2 group w-fit focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded"
+                      aria-label={`Navigate to ${link.name} section`}
                     >
                       <span class="w-0 h-0.5 bg-linear-to-r from-blue-500 to-purple-500 group-hover:w-4 transition-all duration-300"></span>
                       {link.name}
@@ -138,8 +140,8 @@ export default component$(() => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class={`group relative flex items-center justify-center w-full aspect-square rounded-xl bg-slate-800/50 border border-slate-700 ${social.color} ${social.bgColor} transition-all duration-300 hover:scale-110 hover:shadow-lg hover:border-slate-600`}
-                    aria-label={social.name}
+                    class={`group relative flex items-center justify-center w-full aspect-square rounded-xl bg-slate-800/50 border border-slate-700 ${social.color} ${social.bgColor} transition-all duration-300 hover:scale-110 hover:shadow-lg hover:border-slate-600 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900`}
+                    aria-label={`Visit ${social.name} profile`}
                     title={social.name}
                   >
                     <social.icon class="w-5 h-5 text-slate-300 group-hover:text-current transition-colors" />
